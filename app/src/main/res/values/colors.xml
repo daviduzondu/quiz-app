@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="textColorPrimary">#000000</color> <!-- Black for light mode -->
+    <color name="buttonColor">#000000</color> <!-- Button border in light mode -->
+    <color name="buttonCorrect">#4CAF50</color> <!-- Green for correct answer -->
+    <color name="buttonIncorrect">#F44336</color> <!-- Red for incorrect answer -->
+    <color name="button">#5800AC</color>
+</resources>
