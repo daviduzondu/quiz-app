@@ -5,8 +5,8 @@ import com.example.quizapp.model.Question
 import java.util.UUID
 
 
-internal object Constants {
-    fun getQuestions(elements: Int = 40): MutableList<Question> {
+object Constants {
+    fun getQuestions(count: Int = 40): MutableList<Question> {
         val questions = mutableListOf<Question>()
 
         // Question 1
@@ -409,6 +409,6 @@ internal object Constants {
         )
         questions.add(quest40)
 
-        return questions.take(elements) as MutableList<Question>
+            return questions.shuffled().take(count).toMutableList()
     }
 }

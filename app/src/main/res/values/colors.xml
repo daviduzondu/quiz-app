@@ -5,4 +5,5 @@
     <color name="buttonCorrect">#4CAF50</color> <!-- Green for correct answer -->
     <color name="buttonIncorrect">#F44336</color> <!-- Red for incorrect answer -->
     <color name="button">#5800AC</color>
+    <color name="buttonText">#fff</color>
 </resources>

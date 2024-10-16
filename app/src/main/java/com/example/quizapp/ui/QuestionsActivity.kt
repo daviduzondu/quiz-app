@@ -34,7 +34,9 @@ class QuestionsActivity : AppCompatActivity() {
 
         // Retrieve passed data or use default
         name = intent.getStringExtra("NAME") ?: "Default Name"
-        questionsList = Constants.getQuestions(3).apply { shuffle() }
+        val questionCount = intent.getIntExtra("QUESTION_COUNT", 5)
+
+        questionsList = Constants.getQuestions(questionCount)
 
         // Initialize views
         progressBar = findViewById(R.id.progress_bar)
@@ -56,6 +58,10 @@ class QuestionsActivity : AppCompatActivity() {
 
         // Set click listener for the "Next" button
         nextButton.setOnClickListener {
+            if (currentPosition == questionsList.size - 2) {
+                nextButton.text = "Submit"
+            }
+
             if (currentPosition < questionsList.size - 1) {
                 currentPosition++
                 showNextQuestion()
@@ -96,13 +102,13 @@ class QuestionsActivity : AppCompatActivity() {
         for ((index, option) in question.options.withIndex()) {
             val button = MaterialButton(this).apply {
                 text = option
-                textSize = 20f
+                textSize = 25f
+                height = 30
                 setPadding(10, 20, 10, 20)
 
-                // Use theme-aware colors for background and text
-                strokeColor = ContextCompat.getColorStateList(this@QuestionsActivity, R.color.buttonColor)
-                setTextColor(ContextCompat.getColor(this@QuestionsActivity, R.color.textColorPrimary))
-                setBackgroundColor(ContextCompat.getColor(this@QuestionsActivity, R.color.button))
+                setTextColor(getColor(R.color.button))
+                setStrokeColorResource(R.color.button)
+                setBackgroundColor(getColor(com.google.android.material.R.color.m3_ref_palette_white))
 
                 layoutParams = LinearLayoutCompat.LayoutParams(
                     LinearLayoutCompat.LayoutParams.MATCH_PARENT,
@@ -125,11 +131,13 @@ class QuestionsActivity : AppCompatActivity() {
                         val buttonToCheck = optionsContainer.getChildAt(i) as MaterialButton
                         if (i == question.correctAnswer) {
                             // Correct answer is highlighted in green
+                            buttonToCheck.setTextColor(getColor(com.google.android.material.R.color.m3_ref_palette_white))
                             buttonToCheck.setBackgroundColor(
                                 ContextCompat.getColor(this@QuestionsActivity, R.color.buttonCorrect)
                             )
                         } else if (i == selectedOption && !isCorrect) {
                             // Incorrect answer is highlighted in red
+                            buttonToCheck.setTextColor(getColor(com.google.android.material.R.color.m3_ref_palette_white))
                             buttonToCheck.setBackgroundColor(
                                 ContextCompat.getColor(this@QuestionsActivity, R.color.buttonIncorrect)
                             )

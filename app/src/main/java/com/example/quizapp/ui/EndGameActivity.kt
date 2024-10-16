@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.quizapp.MainActivity
 import com.example.quizapp.R
 import nl.dionsegijn.konfetti.core.Party
 import nl.dionsegijn.konfetti.core.emitter.Emitter
+import nl.dionsegijn.konfetti.xml.KonfettiView
 import java.util.concurrent.TimeUnit
 
 class EndGameActivity : AppCompatActivity() {
@@ -20,9 +22,8 @@ class EndGameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_end_game)
-        Party(
-            emitter = Emitter(duration = 5, TimeUnit.SECONDS).perSecond(30)
-        )
+
+
         var name = intent.getStringExtra("NAME").toString()
         var score = intent.getIntExtra("SCORE", 0).toInt()
 

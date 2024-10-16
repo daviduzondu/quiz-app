@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,69 +10,185 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <!-- Quiz App Text -->
+    <!-- Quiz App Title -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/quiz_app_text"
         android:textSize="40sp"
         android:textColor="@android:color/white"
-    android:textStyle="bold"
-    android:layout_marginBottom="40dp"
-    />
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"
+        android:gravity="center" />
 
-    <!-- CardView -->
+    <!-- CardView for User Input -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@android:color/white"
-    app:cardCornerRadius="20dp"
-    >
+        app:cardCornerRadius="20dp"
+        android:layout_marginBottom="20dp">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <!-- Welcome Text -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_text"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Name Input -->
+            <EditText
+                android:id="@+id/name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_name_prompt"
+                android:textSize="20sp"
+                android:inputType="text"
+                android:focusedByDefault="true"
+                android:textColorHint="@android:color/holo_purple"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_purple"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp" />
+
+            <!-- Question Selection Text -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Number of Questions"
+                android:textColor="#7D7979"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="10dp" />
+
+            <!-- FlexboxLayout for Buttons -->
+            <RadioGroup
+                android:id="@+id/question_count_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <!-- Button-like Radio Buttons for Question Options -->
+                <RadioButton
+                    android:id="@+id/question_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="5"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:background="@drawable/selector_button"
+                    android:textColor="@color/selector_button"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:layout_margin="5dp"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/question_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="10"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:background="@drawable/selector_button"
+                    android:textColor="@color/selector_button"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:layout_margin="5dp" />
+
+                <RadioButton
+                    android:id="@+id/question_15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="15"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:background="@drawable/selector_button"
+                    android:textColor="@color/selector_button"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:layout_margin="5dp" />
+
+                <RadioButton
+                    android:id="@+id/question_20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="20"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:background="@drawable/selector_button"
+                    android:textColor="@color/selector_button"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:layout_margin="5dp" />
+
+                <RadioButton
+                    android:id="@+id/question_30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="30"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:background="@drawable/selector_button"
+                    android:textColor="@color/selector_button"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:layout_margin="5dp" />
+
+                <RadioButton
+                    android:id="@+id/question_40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="40"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:background="@drawable/selector_button"
+                    android:textColor="@color/selector_button"
+                    android:textSize="18sp"
+                    android:padding="10dp"
+                    android:layout_margin="5dp" />
+
+            </RadioGroup>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Separate CardView for Start Button -->
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="20dp">
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@android:color/holo_purple">
 
-        <!-- Welcome Text -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome_text"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:textColor="@android:color/black"
-        />
-
-        <!-- Name Input EditText -->
-        <EditText
-            android:id="@+id/name_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/enter_name_prompt"
-            android:textSize="20sp"
-            android:textStyle="normal"
-            android:inputType="text"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textAlignment="center"
-            android:textColor="@android:color/holo_purple"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        />
-
-        <!-- Start Button -->
         <Button
+            android:id="@+id/start_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Start"
-            android:id="@+id/start_btn"
-            />
+            android:text="Start Quiz"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/holo_purple"
+            android:padding="16dp" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
 
-</androidx.cardview.widget.CardView>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

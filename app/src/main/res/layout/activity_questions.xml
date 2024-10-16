@@ -5,22 +5,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".ui.QuestionsActivity">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="top|center"
+        android:layout_height="match_parent"
         android:padding="16dp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_below="@id/progress_container">
+
+            <TextView
+                android:id="@+id/score_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal"
+                tools:text="Score: 0"
+                android:layout_marginBottom="20dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/question_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                tools:text="What country does this flag belong to?"
+                android:gravity="center" />
+
+            <ImageView
+                android:layout_marginTop="15dp"
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:src="@drawable/nigeria_flag" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/options_container"
+                android:layout_marginTop="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/next_question"
+                android:layout_marginTop="20dp"
+                android:id="@+id/next_btn"
+                android:padding="15dp"
+                android:textSize="18sp"
+                android:drawablePadding="0dp"
+                android:gravity="start|center"
+                android:drawableEnd="@drawable/baseline_arrow_forward_24"
+                />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/progress_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:weightSum="10">
+            android:layout_marginTop="15dp">
 
             <androidx.core.widget.ContentLoadingProgressBar
                 android:id="@+id/progress_bar"
@@ -41,48 +96,6 @@
                 tools:text="11/40" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <TextView
-            android:id="@+id/score_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center_horizontal"
-            tools:text="Score: 0"
-            android:layout_marginBottom="20dp"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/question_text_view"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            tools:text="What country does this flag belong to?"
-            android:gravity="center" />
-
-        <ImageView
-            android:layout_marginTop="15dp"
-            android:id="@+id/image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:src="@drawable/nigeria_flag" />
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/options_container"
-            android:layout_marginTop="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/next_question"
-            android:textColor="@color/button"
-            android:layout_marginTop="16dp"
-            android:id="@+id/next_btn" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
 
 </androidx.core.widget.NestedScrollView>

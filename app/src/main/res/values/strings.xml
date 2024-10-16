@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">QuizApp</string>
     <string name="quiz_app_text">Quiz App</string>
-    <string name="welcome_text">Welcome</string>
-    <string name="enter_name_prompt">Please enter your name</string>
+    <string name="welcome_text">Welcome Back</string>
+    <string name="enter_name_prompt">Enter your name</string>
     <string name="next_question">Next Question</string>
     <string name="restart_quiz">Restart Quiz</string>
     <string name="exit_game">Exit</string>
