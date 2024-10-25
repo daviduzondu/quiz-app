@@ -5,7 +5,7 @@ import com.example.quizapp.model.Question
 import java.util.UUID
 
 
-object Constants {
+object QuestionBank {
     fun getQuestions(count: Int = 40): MutableList<Question> {
         val questions = mutableListOf<Question>()
 

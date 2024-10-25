@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.example.quizapp.R
 import com.example.quizapp.model.Question
-import com.example.quizapp.utils.Constants
+import com.example.quizapp.utils.QuestionBank
 import com.google.android.material.button.MaterialButton
 import androidx.core.content.ContextCompat
 
@@ -36,7 +36,7 @@ class QuestionsActivity : AppCompatActivity() {
         name = intent.getStringExtra("NAME") ?: "Default Name"
         val questionCount = intent.getIntExtra("QUESTION_COUNT", 5)
 
-        questionsList = Constants.getQuestions(questionCount)
+        questionsList = QuestionBank.getQuestions(questionCount)
 
         // Initialize views
         progressBar = findViewById(R.id.progress_bar)
